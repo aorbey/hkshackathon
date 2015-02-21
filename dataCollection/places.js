@@ -3,6 +3,7 @@ eqfeed_callback({
   "features": [
     {
       "type": "Feature",
+      "icon": "http://maps.google.com/mapfiles/ms/micons/parkinglot.png",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -16,6 +17,7 @@ eqfeed_callback({
     },
     {
       "type": "Feature",
+      "icon": "https://www.incinqueterre.com/images/bus_icon.png",
       "geometry": {
         "type": "Point",
         "coordinates": [
