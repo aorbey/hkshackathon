@@ -88,19 +88,18 @@
         };
 
 
-        var businessLines = [new google.maps.Polyline({
+         var businessLines = [new google.maps.Polyline({
             path: [
-                new google.maps.LatLng(42.206005, -72.618128
-                ),
-                new google.maps.LatLng(42.207133, -72.617163)
+                new google.maps.LatLng(42.203780, -72.610849),
+                new google.maps.LatLng(42.207112, -72.607600)
             ],
             geodesic: true,
-            strokeColor: '#00FF00',
+            strokeColor: '#0000FF',
             strokeOpacity: 1.0,
             strokeWeight: 2
         })];
 
-        var lineSymbol = {
+		var lineSymbol = {
             path: 'M 0,-1 0,1',
             strokeOpacity: 1,
             scale: 4
@@ -214,7 +213,38 @@
                 strokeColor: '#FF0000',
                 strokeOpacity: 1.0,
                 strokeWeight: 2
-            })];
+            }),
+			
+		new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.207098, -72.607598),
+                new google.maps.LatLng(42.206518, -72.606542)
+            ],
+            geodesic: true,
+            strokeColor: '#FF00F0',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        }),
+		new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.203780, -72.610849),
+                new google.maps.LatLng(42.204220, -72.611637)
+            ],
+            geodesic: true,
+            strokeColor: '#FF00F0',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        }),
+		new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.204220, -72.611637),
+                new google.maps.LatLng(42.203115, -72.612736)
+            ],
+            geodesic: true,
+            strokeColor: '#FF00F0',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        })];
 
         var vehicleLines = [ new google.maps.Polyline({
             path: [
