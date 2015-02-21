@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93b338f0-9344-4ac2-8621-a67fe0147889" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/dashboard/dashboard.html" />
     </list>
     <ignored path="hkshackathon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,9 +28,11 @@
       <file leaf-file-name="dashboard.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5799649" vertical-offset="0" max-vertical-offset="569">
-              <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
-              <folding />
+            <state vertical-scroll-proportion="0.13005273" vertical-offset="136" max-vertical-offset="780">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+              <folding>
+                <element signature="e#957#1916#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,6 +170,9 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="93b338f0-9344-4ac2-8621-a67fe0147889" name="Default" comment="" />
@@ -221,9 +226,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5799649" vertical-offset="0" max-vertical-offset="569">
-          <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
-          <folding />
+        <state vertical-scroll-proportion="0.13005273" vertical-offset="136" max-vertical-offset="780">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding>
+            <element signature="e#957#1916#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
