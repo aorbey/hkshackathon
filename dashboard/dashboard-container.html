@@ -11,12 +11,9 @@
         var map;
         var mapStyle = [
             {
-                "featureType": "road",
+                "featureType": "poi",
                 "stylers": [
-                    { "weight": 5.2 },
-                    { "saturation": 5 },
-                    { "hue": "#00e5ff" },
-                    { "lightness": 15 }
+                    { "visibility": "off" }
                 ]
             },{
                 "featureType": "transit",
@@ -24,10 +21,23 @@
                     { "visibility": "off" }
                 ]
             },{
-                "featureType": "poi",
+                "featureType": "road",
                 "stylers": [
-                    { "visibility": "off" }
+                    { "weight": 3.4 },
+                    { "gamma": 0.98 },
+                    { "saturation": -1 },
+                    { "hue": "#00e5ff" },
+                    { "lightness": -1 }
                 ]
+            },{
+                "featureType": "road.highway",
+                "stylers": [
+                    { "saturation": -54 },
+                    { "weight": 1.7 },
+                    { "hue": "#00c3ff" },
+                    { "lightness": 55 }
+                ]
+            },{
             },{
             }
         ];
