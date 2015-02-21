@@ -19,11 +19,6 @@
                     { "lightness": 15 }
                 ]
             },{
-                "featureType": "road.highway",
-                "stylers": [
-                    { "visibility": "off" }
-                ]
-            },{
                 "featureType": "transit",
                 "stylers": [
                     { "visibility": "off" }
@@ -40,7 +35,7 @@
         google.maps.event.addDomListener(window, 'load', function() {
             map = new google.maps.Map(document.getElementById('map-canvas'), {
                 center: new google.maps.LatLng(42.207046, -72.607677),
-                zoom: 16,
+                zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 styles: mapStyle
             });
@@ -55,14 +50,26 @@
                     document.getElementById('legend'));
         });
 
+
+        function addMarker(feature) {
+            var marker = new google.maps.Marker({
+                position: feature.position,
+                icon: "http://maps.google.com/mapfiles/ms/micons/parkinglot.png",
+                map: map
+            });
+        }
+
         // Defines the callback function referenced in the jsonp file.
         function eqfeed_callback(data) {
             map.data.addGeoJson(data);
+            for (var i = 0, feature; feature = data.features[i]; i++) {
+                console.log(feature);
+                addMarker(feature);
+            }
         }
 
     </script>
     <script>
-
         visibleData = {
             trafficSources: true,
             businesses: true,
@@ -92,9 +99,6 @@
                 });
             }
         });
-
-
-
     </script>
 </head>
 <body>
@@ -103,7 +107,7 @@
         <div class="map-container">
             <div class="data-selectors">
                 <div class="button" id="trafficSourcesButton">Traffic Sources</div >
-                <div  class="button" id="businessesButton">Businesses</div >
+                <div class="button" id="businessesButton">Businesses</div >
                 <div class="button" id="pedestrianTrafficButton">Pedestrian Traffic</div >
                 <div class="button" id="vehicleTrafficButton">Vehicle Traffic</div >
                 <div class="button" id="infrastructureButton">Infrastructure Issues</div >
