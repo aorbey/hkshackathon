@@ -64,16 +64,219 @@
     <script>
 
         visibleData = {
-            trafficSources: true,
-            businesses: true,
-            pedestrianTraffic: true,
-            vehicleTraffic: true,
-            infrastructure: true
+            trafficSources: false,
+            businesses: false,
+            pedestrianTraffic: false,
+            vehicleTraffic: false,
+            infrastructure: false
         };
+
+
+        var businessLines = [new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.207818, -72.615175),
+                new google.maps.LatLng(42.206165, -72.605927)
+            ],
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        })];
+
+        var pedestrianLines = [new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.207818, -72.615175),
+                new google.maps.LatLng(42.206165, -72.605927)
+            ],
+            geodesic: true,
+            strokeColor: '#FF00F0',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        })];
+
+        var vehicleLines = [new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.207818, -72.615175),
+                new google.maps.LatLng(42.206165, -72.605927)
+            ],
+            geodesic: true,
+            strokeColor: '#FFF000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        })];
+
+        var infrastructureLines = [new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.203350, -72.619416),
+                new google.maps.LatLng(42.207769, -72.615081)
+            ],
+            geodesic: true,
+            strokeColor: '#FFFF00',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        }),
+        new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.205909, -72.611541),
+                new google.maps.LatLng(42.207769, -72.615081)
+            ],
+            geodesic: true,
+            strokeColor: '#FFFF00',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        }),
+        new google.maps.Polyline({
+            path: [
+                new google.maps.LatLng(42.205909, -72.611541),
+                new google.maps.LatLng(42.201403, -72.615864)
+            ],
+            geodesic: true,
+            strokeColor: '#FFFF00',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        }),
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.206688, -72.616176),
+                    new google.maps.LatLng(42.204717, -72.612592)
+                ],
+                geodesic: true,
+                strokeColor: '#FFFF00',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.205528, -72.617248),
+                    new google.maps.LatLng(42.203652, -72.613751)
+                ],
+                geodesic: true,
+                strokeColor: '#FFFF00',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.204431, -72.618364),
+                    new google.maps.LatLng(42.203954, -72.617484)
+                ],
+                geodesic: true,
+                strokeColor: '#00FF00',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.206339, -72.612442),
+                    new google.maps.LatLng(42.205258, -72.613515)
+                ],
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.207308, -72.614287),
+                    new google.maps.LatLng(42.206180, -72.615296)
+                ],
+                geodesic: true,
+                strokeColor: '#00FF00',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.206784, -72.613343),
+                    new google.maps.LatLng(42.204590, -72.615510)
+                ],
+                geodesic: true,
+                strokeColor: '#FFFF00',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.204590, -72.615510),
+                    new google.maps.LatLng(42.202397, -72.617656)
+                ],
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.202874, -72.618579),
+                    new google.maps.LatLng(42.206196, -72.615339)
+                ],
+                geodesic: true,
+                strokeColor: '#FFFF00',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            }),
+            new google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(42.203382, -72.619437),
+                    new google.maps.LatLng(42.201411, -72.615854)
+                ],
+                geodesic: true,
+                strokeColor: '#FFFF00',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            })
+        ];
+
 
         var rerender = function(){
             for(dataType in visibleData){
-                $('#' + dataType + 'Button').toggleClass('activated', visibleData[dataType])
+                $('#' + dataType + 'Button').toggleClass('activated', visibleData[dataType]);
+            }
+
+            if(visibleData.trafficSources){
+
+            }
+
+            if(visibleData.businesses){
+                for(var i = 0; i<businessLines.length; i++){
+                    businessLines[i].setMap(map);
+                }
+            }else{
+                for(var i = 0; i<businessLines.length; i++){
+                    businessLines[i].setMap(null);
+                }
+            }
+
+            if(visibleData.pedestrianTraffic){
+                for(var i = 0; i<pedestrianLines.length; i++){
+                    pedestrianLines[i].setMap(map);
+                }
+            }else{
+                for(var i = 0; i<pedestrianLines.length; i++){
+                    pedestrianLines[i].setMap(null);
+                }
+            }
+
+            if(visibleData.vehicleTraffic){
+                for(var i = 0; i<vehicleLines.length; i++){
+                    vehicleLines[i].setMap(map);
+                }
+            }else{
+                for(var i = 0; i<vehicleLines.length; i++){
+                    vehicleLines[i].setMap(null);
+                }
+            }
+
+            if(visibleData.infrastructure){
+                for(var i = 0; i<infrastructureLines.length; i++){
+                    infrastructureLines[i].setMap(map);
+                }
+            }else{
+                for(var i = 0; i<infrastructureLines.length; i++){
+                    infrastructureLines[i].setMap(null);
+                }
             }
         };
 
