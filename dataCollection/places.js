@@ -17,7 +17,7 @@ eqfeed_callback({
     },
     {
       "type": "Feature",
-      "icon": "https://www.incinqueterre.com/images/bus_icon.png",
+      "icon": "http://maps.google.com/mapfiles/ms/micons/bus.png",
       "geometry": {
         "type": "Point",
         "coordinates": [
