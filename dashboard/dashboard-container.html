@@ -52,7 +52,18 @@
 
         // Defines the callback function referenced in the jsonp file.
         function eqfeed_callback(data) {
-            map.data.addGeoJson(data);
+            for (var i = 0, feature; feature = data.features[i]; i++) {
+                addMarker(feature);
+                console.log(feature);
+            }
+        }
+
+        function addMarker(feature) {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]),
+                icon: feature.icon,
+                map: map
+            });
         }
 
     </script>
