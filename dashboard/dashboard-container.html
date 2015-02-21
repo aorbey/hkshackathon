@@ -53,7 +53,6 @@
         // Defines the callback function referenced in the jsonp file.
         function eqfeed_callback(data) {
             features = data;
-
         }
 
     </script>
@@ -79,13 +78,19 @@
             strokeWeight: 2
         })];
 
+        var lineSymbol = {
+            path: 'M 0,-1 0,1',
+            strokeOpacity: 1,
+            scale: 4
+        };
+
         var pedestrianLines = [new google.maps.Polyline({
             path: [
-                new google.maps.LatLng(42.207818, -72.615175),
-                new google.maps.LatLng(42.206165, -72.605927)
+                new google.maps.LatLng(42.204218, -72.611677),
+                new google.maps.LatLng(42.205211, -72.613566)
             ],
-            geodesic: true,
-            strokeColor: '#FF00F0',
+            icon: lineSymbol,
+            strokeColor: '#00FF00',
             strokeOpacity: 1.0,
             strokeWeight: 2
         })];
@@ -226,14 +231,21 @@
         ];
 
 
+        var shown = false;
         var rerender = function(){
             for(dataType in visibleData){
                 $('#' + dataType + 'Button').toggleClass('activated', visibleData[dataType]);
             }
 
             if(visibleData.trafficSources){
-       //         map.data.addGeoJson(features);
+                map.data.addGeoJson(features);
+                shown = true;
             }else{
+                if(shown){
+                    for(var i = 0; i < features.length; i++){
+                        map.data.remove(features[i]);
+                    }
+                }
 
             }
 
