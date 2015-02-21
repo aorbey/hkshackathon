@@ -50,22 +50,9 @@
                     document.getElementById('legend'));
         });
 
-
-        function addMarker(feature) {
-            var marker = new google.maps.Marker({
-                position: feature.position,
-                icon: "http://maps.google.com/mapfiles/ms/micons/parkinglot.png",
-                map: map
-            });
-        }
-
         // Defines the callback function referenced in the jsonp file.
         function eqfeed_callback(data) {
             map.data.addGeoJson(data);
-            for (var i = 0, feature; feature = data.features[i]; i++) {
-                console.log(feature);
-                addMarker(feature);
-            }
         }
 
     </script>
