@@ -52,7 +52,8 @@
 
         // Defines the callback function referenced in the jsonp file.
         function eqfeed_callback(data) {
-            map.data.addGeoJson(data);
+            features = data;
+
         }
 
     </script>
@@ -68,11 +69,12 @@
 
         var businessLines = [new google.maps.Polyline({
             path: [
-                new google.maps.LatLng(42.207818, -72.615175),
-                new google.maps.LatLng(42.206165, -72.605927)
+                new google.maps.LatLng(42.206005, -72.618128
+                ),
+                new google.maps.LatLng(42.207133, -72.617163)
             ],
             geodesic: true,
-            strokeColor: '#FF0000',
+            strokeColor: '#00FF00',
             strokeOpacity: 1.0,
             strokeWeight: 2
         })];
@@ -230,6 +232,8 @@
             }
 
             if(visibleData.trafficSources){
+       //         map.data.addGeoJson(features);
+            }else{
 
             }
 
